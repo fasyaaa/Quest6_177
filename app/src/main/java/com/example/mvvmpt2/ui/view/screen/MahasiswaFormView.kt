@@ -123,7 +123,7 @@ fun MahasiswaFormView(
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
 
-                OutlinedTextField(value = nim, onValueChange = {nim = it},
+                OutlinedTextField(modifier = Modifier.fillMaxWidth(), value = nim, onValueChange = {nim = it},
                     label =
                     {
                         Text(text = "Nomor Induk Mahasiswa")
