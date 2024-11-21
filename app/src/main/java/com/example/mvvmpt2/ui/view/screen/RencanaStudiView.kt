@@ -33,6 +33,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -66,6 +67,7 @@ fun RencanaStudiView(
             .fillMaxSize()
             .background(color = colorResource(id = R.color.primary))
     ) {
+        Spacer(modifier = Modifier.padding(16.dp))
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -75,6 +77,7 @@ fun RencanaStudiView(
             Image(
                 painter = painterResource(id = R.drawable.pp),
                 contentDescription = "",
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .clip(shape = CircleShape)
                     .size(50.dp)
