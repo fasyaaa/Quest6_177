@@ -13,6 +13,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -55,13 +58,17 @@ fun RencanaStudiView(
             .background(color = colorResource(id = R.color.primary))
     ) {
         Row(
-            modifier = Modifier.fillMaxWidth().padding(16.dp),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
                 painter = painterResource(id = R.drawable.pp),
                 contentDescription = "",
-                modifier = Modifier.clip(shape = CircleShape).size(50.dp)
+                modifier = Modifier
+                    .clip(shape = CircleShape)
+                    .size(50.dp)
             )
             Spacer(modifier = Modifier.padding(start = 16.dp))
             Column(modifier = Modifier.weight(1f)) {
@@ -79,7 +86,11 @@ fun RencanaStudiView(
                 )
             }
             Box{
-                
+                Icon(
+                    imageVector = Icons.Filled.Notifications,
+                    contentDescription = "",
+                    tint = Color.White
+                )
             }
         }
     }
