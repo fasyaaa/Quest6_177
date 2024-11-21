@@ -125,7 +125,11 @@ fun RencanaStudiView(
                         chosenDropDown = it
                     }
                 )
-
+                Spacer(modifier = Modifier.padding(8.dp))
+                Row (
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ){  }
             }
         }
     }
