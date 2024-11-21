@@ -167,6 +167,9 @@ fun RencanaStudiView(
                     Button(onClick = { onBackButtonClicked() }) {
                         Text( text =  "Kembali")
                     }
+                    Button(onClick = {onSubmitButtonClicked(listData) }, enabled = checked ) {
+                        Text(text = "Lanjut")
+                    }
                 }
             }
         }
