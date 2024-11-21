@@ -3,6 +3,7 @@ package com.example.mvvmpt2.ui.view.screen
 import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -34,8 +35,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mvvmpt2.R
+import com.example.mvvmpt2.data.MataKuliah
 import com.example.mvvmpt2.model.Mahasiswa
 import com.example.mvvmpt2.model.RencanaStudi
+import com.example.mvvmpt2.ui.widget.DynamicSelectedField
 
 @Composable
 fun RencanaStudiView(
@@ -114,6 +117,15 @@ fun RencanaStudiView(
                     fontWeight = FontWeight.Light
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
+                DynamicSelectedField(
+                    selectedValue = chosenDropDown,
+                    options = MataKuliah.options,
+                    label = "Mata Kuliah",
+                    onValueChangeEvent = {
+                        chosenDropDown = it
+                    }
+                )
+
             }
         }
     }
