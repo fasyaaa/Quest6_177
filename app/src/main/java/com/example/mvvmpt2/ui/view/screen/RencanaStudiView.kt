@@ -17,7 +17,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -36,6 +38,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.mvvmpt2.R
 import com.example.mvvmpt2.data.MataKuliah
+import com.example.mvvmpt2.data.RuangKelas
 import com.example.mvvmpt2.model.Mahasiswa
 import com.example.mvvmpt2.model.RencanaStudi
 import com.example.mvvmpt2.ui.widget.DynamicSelectedField
@@ -129,7 +132,20 @@ fun RencanaStudiView(
                 Row (
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
-                ){  }
+                ){
+                    RuangKelas.kelas.forEach { data ->
+                        Row (verticalAlignment = Alignment.CenterVertically){
+                            RadioButton(
+                                selected = pilihanKelas == data,
+                                onClick = { pilihanKelas = data}
+                            )
+                            Text(data)
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.padding(8.dp))
+//                Menambahkan garis lurus
+                HorizontalDivider()
             }
         }
     }
