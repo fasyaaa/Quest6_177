@@ -113,7 +113,9 @@ fun MahasiswaFormView(
         )
         {
             Column (
-                modifier = Modifier.fillMaxSize().padding(16.dp),
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             )
             {
@@ -146,10 +148,12 @@ fun MahasiswaFormView(
                     )
                 Spacer(modifier = Modifier.padding(8.dp))
 
-                OutlinedTextField(value = nama, onValueChange = {nama = it},
+                OutlinedTextField(modifier = Modifier.fillMaxWidth(),
+                    value = nama,
+                    onValueChange = {nama = it},
                     label =
                     {
-                        Text(text = "Nama")
+                        Text(text = "Nama Mahasiswa")
                     },
                     leadingIcon = {
                         Icon(imageVector =  Icons.Filled.Info, contentDescription = "")
@@ -163,10 +167,12 @@ fun MahasiswaFormView(
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
 
-                OutlinedTextField(value = email, onValueChange = {email = it},
+                OutlinedTextField(modifier = Modifier.fillMaxWidth(),
+                    value = email,
+                    onValueChange = {email = it},
                     label =
                     {
-                        Text(text = "Email")
+                        Text(text = "Email Mahasiswa")
                     },
                     leadingIcon = {
                         Icon(imageVector =  Icons.Filled.Info, contentDescription = "")
